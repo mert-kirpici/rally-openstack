@@ -47,6 +47,7 @@ class TempestConfigfileManager(object):
             )
         self.clients = self.credential.clients()
         self.available_services = self.clients.services().values()
+        LOG.error(str(self.available_services))
 
         self.conf = configparser.ConfigParser(allow_no_value=True)
         self.conf.optionxform = str
